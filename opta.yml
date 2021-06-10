@@ -1,0 +1,32 @@
+name: rails
+environments:
+  - name: staging
+    path: "../opta.yml"
+modules:
+  - name: app
+    type: k8s-service
+    port:
+      http: 3000
+    image: AUTO
+    healthcheck_path: "/"
+    public_uri: "rails.{parent.domain}"
+    env_vars:
+      - name: RAILS_ENV
+        value: production
+      - name: RAILS_LOG_TO_STDOUT
+        value: enabled
+      - name: RAILS_SERVE_STATIC_FILES
+        value: enabled
+    secrets:
+      - SECRET_KEY_BASE
+    resource_request:
+      cpu: 1000
+      memory: 2048
+    links:
+      - db
+      - cache
+  - name: db
+    type: postgres
+    instance_class: db.t3.medium
+  - name: cache
+    type: redis
