@@ -113,8 +113,6 @@ GEM
     puma (3.12.6)
     racc (1.5.2)
     rack (2.2.3)
-    rack-protection (2.1.0)
-      rack
     rack-proxy (0.7.0)
       rack
     rack-test (1.1.0)
@@ -147,7 +145,7 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    redis (4.2.5)
+    redis (4.4.0)
     regexp_parser (2.1.1)
     ruby_dep (1.5.0)
     rubyzip (2.3.0)
@@ -165,11 +163,10 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    sidekiq (6.0.7)
+    sidekiq (6.2.1)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
-      rack-protection (>= 2.0.0)
-      redis (>= 4.1.0)
+      redis (>= 4.2.0)
     spring (2.1.1)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
@@ -221,7 +218,7 @@ DEPENDENCIES
   rails (~> 5.2.3)
   sass-rails (~> 5.0)
   selenium-webdriver
-  sidekiq (~> 6.0.0)
+  sidekiq (~> 6.2.1)
   spring
   turbolinks (~> 5)
   tzinfo-data
